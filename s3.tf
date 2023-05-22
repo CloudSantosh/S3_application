@@ -129,10 +129,10 @@ resource "aws_s3_bucket_versioning" "bucket_version_2" {
 
 # For third Bucket
 resource "aws_s3_bucket_public_access_block" "s3_bucket_policy_3" {
-  bucket = aws_s3_bucket.mybucket_3.id
-  // block_public_acls       = false
-  block_public_policy = false
-  //ignore_public_acls      = false
+  bucket                  = aws_s3_bucket.mybucket_3.id
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
   restrict_public_buckets = false
 }
 
