@@ -160,9 +160,9 @@ resource "aws_s3_bucket_versioning" "bucket_version_3" {
 }
 
 
-# Changing the aws object policy using aws cli to Public access
-
-# Uploading file to the s3
+#---------------------------------------------------------------------
+# Uploading file to the 3rd s3 buckets 
+#---------------------------------------------------------------------
 resource "null_resource" "remove_and_upload_to_s3" {
   provisioner "local-exec" {
     command = "aws s3 sync ${path.module}/files s3://${aws_s3_bucket.mybucket_3.id}"
